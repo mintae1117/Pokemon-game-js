@@ -1,7 +1,7 @@
 kaboom({
-    width: 2500,
-    height: 1400,
-    scale: 0.7
+    width: window.innerWidth,
+    height: window.innerHeight,
+    scale: 1.0
 })
 
 setBackground(Color.fromHex('#36A6E0'))
