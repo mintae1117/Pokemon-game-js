@@ -246,13 +246,22 @@ function setWorld(worldState) {
             pos(40,30),
             fixed()
         ])
-
-        if (worldState.faintedMons < 4) {
+        
+        if (worldState.faintedMons.length === 0) {
             content.text = dialogue
-        } else {
+        }
+        else if(worldState.faintedMons.length === 1){
+            content.text = "You've got three more left to defeat!"
+        }
+        else if(worldState.faintedMons.length === 2){
+            content.text = "You've got two more left to defeat!"
+        }
+        else if(worldState.faintedMons.length === 3){
+            content.text = "You've got last one left to defeat!"
+        }
+        else {
             content.text = "You're the champion!"
         }
-
         onUpdate(() => {
             if (isKeyDown('space')) {
                 destroy(dialogueBox)

@@ -101,7 +101,7 @@ function setBattle(worldState) {
     ])
 
     const content = box.add([
-        text('MUSHROOM is ready to battle!', { size: 42}),
+        text('PLAYER is ready to battle!', { size: 42}),
         color(10,10,10),
         pos(20,20)
     ])
@@ -136,7 +136,7 @@ function setBattle(worldState) {
         if (playerMon.fainted || enemyMon.fainted) return
 
         if (phase === 'player-selection') {
-            content.text = '> Tackle'
+            content.text = '=> Attack!'
             phase = 'player-turn'
             return
         }
@@ -146,7 +146,7 @@ function setBattle(worldState) {
             const damageDealt = Math.random() * 230
 
             if (damageDealt > 150) {
-                content.text = "It's a critical hit!"
+                content.text = worldState.enemyName.toUpperCase() + " attacked you with a critical hit!"
             }
 
             reduceHealth(playerMonHealthBar, damageDealt)
@@ -157,12 +157,12 @@ function setBattle(worldState) {
         }
 
         if (phase === 'player-turn') {
-            const damageDealt = Math.random() * 2300
+            const damageDealt = Math.random() * 230
 
             if (damageDealt > 150) {
-                content.text = "It's a critical hit!"
+                content.text = "You attacked a critical hit!"
             } else {
-                content.text = 'MUSHROOM used tackle.'
+                content.text = 'PLAYER used attack.'
             }
 
             reduceHealth(enemyMonHealthBar, damageDealt)
@@ -186,7 +186,7 @@ function setBattle(worldState) {
     function makeMonDrop(mon) {
         tween(
             mon.pos.y,
-            600,
+            1600,
             0.5,
             (val) => mon.pos.y = val,
             easings.easeInSine
@@ -202,25 +202,36 @@ function setBattle(worldState) {
             content.text = worldState.enemyName.toUpperCase() + ' fainted!'
             enemyMon.fainted = true
             setTimeout(() => {
-                content.text = 'MUSHROOM won the battle!'
-            }, 1000)
+                content.text = 'Player won the battle!'
+            }, 2000)
+            setTimeout(() => {
+                content.text = 'going to the page'
+            }, 4000)
             setTimeout(() => {
                 worldState.faintedMons.push(worldState.enemyName)
                 go('world', worldState)
-            }, 2000)
+
+                if(worldState.enemyName === "cat"){
+                    window.open("https://www.naver.com/", '_blank')
+                }
+                if(worldState.enemyName === "spider"){
+                    window.open("https://www.youtube.com/", '_blank')
+                }
+
+            }, 6000)
         }
 
         if (playerMonHealthBar.width < 0 && !playerMon.fainted) {
             makeMonDrop(playerMon)
-            content.text = 'MUSHROOM fainted!'
+            content.text = 'PLAYER fainted!'
             playerMon.fainted = true
             setTimeout(() => {
-                content.text = 'You rush to get MUSHROOM healed!'
-            }, 1000)
+                content.text = 'You rush to get PLAYER healed!'
+            }, 2000)
             setTimeout(() => {
                 worldState.playerPos = vec2(500,700)
                 go('world', worldState)
-            }, 2000)
+            }, 4000)
         }
     })
 }
