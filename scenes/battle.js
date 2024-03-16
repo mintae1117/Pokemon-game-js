@@ -143,9 +143,9 @@ function setBattle(worldState) {
 
         if (phase === 'enemy-turn') {
             content.text = worldState.enemyName.toUpperCase() + ' attacked you!!'
-            const damageDealt = Math.random() * 230
+            const damageDealt = Math.random() * 100
 
-            if (damageDealt > 150) {
+            if (damageDealt > 80) {
                 content.text = worldState.enemyName.toUpperCase() + " attacked you with a critical hit!"
             }
 
@@ -157,7 +157,7 @@ function setBattle(worldState) {
         }
 
         if (phase === 'player-turn') {
-            const damageDealt = Math.random() * 230
+            const damageDealt = Math.random() * 250
 
             if (damageDealt > 150) {
                 content.text = "You attacked a critical hit!"

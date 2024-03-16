@@ -234,7 +234,7 @@ function setWorld(worldState) {
             pos(350, 700),
             fixed()
         ])
-        const dialogue = "Defeat all monsters on this island and you'll become the champion!"
+        const dialogue = "Defeat all monsters on this island and you'll become the champion! and..."
         const content = dialogueBox.add([
             text('', 
             {
@@ -249,6 +249,9 @@ function setWorld(worldState) {
         
         if (worldState.faintedMons.length === 0) {
             content.text = dialogue
+            setTimeout(() => {
+                content.text = "go and look around freely!    [press space]"
+            }, 2000);
         }
         else if(worldState.faintedMons.length === 1){
             content.text = "You've got three more left to defeat!"
@@ -277,6 +280,7 @@ function setWorld(worldState) {
 
     function onCollideWithPlayer(enemyName, player, worldState) {
         player.onCollide(enemyName, () => {
+            player.isInDialogue = true
             flashScreen()
             setTimeout(() => {
                 worldState.playerPos = player.pos
