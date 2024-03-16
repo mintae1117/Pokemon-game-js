@@ -11,12 +11,12 @@ function loadAssets() {
         'centipede-mon': { x: 64, y: 16, width: 32, height: 32 },
         'grass-mon': { x: 0, y: 49, width: 32, height: 32 },
         'mushroom-mon': { x: 32, y: 49, width: 32, height: 32 },
-        'player-mon' : { x: 64, y: 81, width: 32, height: 32 },
+        'player-mon' : { x: 64, y: 80, width: 32, height: 32 },
         'mini-mons': { x: 0, y: 0, width: 128, height: 16, sliceX: 8, sliceY: 1,
             anims: { 'spider': 1, 'centipede': 2, 'grass': 3 }
         }
     })
-    loadSprite('battle-background', './assets/battleBackground.png')
+    loadSprite('battle-background', './assets/battlebg01.png')
     loadSpriteAtlas('./assets/tiles.png', {
         'tile': { x: 0, y: 0, width: 128, height: 128, sliceX: 8, sliceY: 8,
             anims: {

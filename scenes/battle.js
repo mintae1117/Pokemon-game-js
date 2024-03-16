@@ -1,14 +1,14 @@
 function setBattle(worldState) {
     add([
         sprite('battle-background'),
-        scale(1.3),
+        scale(1.8),
         pos(0,0)
     ])
 
     const enemyMon = add([
         sprite(worldState.enemyName + '-mon'),
         scale(5),
-        pos(1300,100),
+        pos(1300,300),
         opacity(1), 
         {
             fainted: false
@@ -27,7 +27,7 @@ function setBattle(worldState) {
     const playerMon = add([
         sprite('player-mon'),
         scale(8),
-        pos(-100, 300),
+        pos(-100, 350),
         opacity(1),
         {
             fainted: false
@@ -36,7 +36,7 @@ function setBattle(worldState) {
 
     tween(
         playerMon.pos.x, 
-        300, 
+        100, 
         0.3, 
         (val) => playerMon.pos.x = val, 
         easings.easeInSine
@@ -45,11 +45,11 @@ function setBattle(worldState) {
     const playerMonHealthBox = add([
        rect(400, 100),
        outline(4),
-       pos(1000, 400) 
+       pos(-100, 50)
     ])
 
     playerMonHealthBox.add([
-        text('MUSHROOM', {size: 32}),
+        text('PLAYER', {size: 32}),
         color(10,10,10),
         pos(10, 10)
     ])
@@ -66,12 +66,12 @@ function setBattle(worldState) {
         pos(15, 50)
     ])
 
-    tween(playerMonHealthBox.pos.x, 850, 0.3, (val) => playerMonHealthBox.pos.x = val, easings.easeInSine)
+    tween(playerMonHealthBox.pos.x, 100, 0.3, (val) => playerMonHealthBox.pos.x = val, easings.easeInSine)
 
     const enemyMonHealthBox = add([
         rect(400, 100),
         outline(4),
-        pos(-100, 50) 
+        pos(1000, 500) 
     ])
 
     enemyMonHealthBox.add([
@@ -92,12 +92,12 @@ function setBattle(worldState) {
         pos(15, 50)
     ])
 
-    tween(enemyMonHealthBox.pos.x, 100, 0.3, (val) => enemyMonHealthBox.pos.x = val, easings.easeInSine)
+    tween(enemyMonHealthBox.pos.x, 850, 0.3, (val) => enemyMonHealthBox.pos.x = val, easings.easeInSine)
 
     const box = add([
         rect(1300, 300),
         outline(4),
-        pos(-2, 530)
+        pos(50, 620)
     ])
 
     const content = box.add([

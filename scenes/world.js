@@ -231,7 +231,7 @@ function setWorld(worldState) {
         const dialogueBox = dialogueBoxFixedContainer.add([
             rect(1000, 200),
             outline(5),
-            pos(150, 500),
+            pos(350, 700),
             fixed()
         ])
         const dialogue = "Defeat all monsters on this island and you'll become the champion!"
