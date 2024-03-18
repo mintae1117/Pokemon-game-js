@@ -1,14 +1,14 @@
 function setBattle(worldState) {
     add([
         sprite('battle-background'),
-        scale(1.8),
+        scale(2.0),
         pos(0,0)
     ])
 
     const enemyMon = add([
         sprite(worldState.enemyName + '-mon'),
         scale(5),
-        pos(1300,300),
+        pos(1000,400),
         opacity(1), 
         {
             fainted: false
@@ -18,7 +18,7 @@ function setBattle(worldState) {
 
     tween(
         enemyMon.pos.x, 
-        1000, 
+        1300, 
         0.3, 
         (val) => enemyMon.pos.x = val,
         easings.easeInSine
@@ -27,7 +27,7 @@ function setBattle(worldState) {
     const playerMon = add([
         sprite('player-mon'),
         scale(8),
-        pos(-100, 350),
+        pos(100, 400),
         opacity(1),
         {
             fainted: false
@@ -36,7 +36,7 @@ function setBattle(worldState) {
 
     tween(
         playerMon.pos.x, 
-        100, 
+        300, 
         0.3, 
         (val) => playerMon.pos.x = val, 
         easings.easeInSine
@@ -45,7 +45,7 @@ function setBattle(worldState) {
     const playerMonHealthBox = add([
        rect(400, 100),
        outline(4),
-       pos(-100, 50)
+       pos(-100, 100)
     ])
 
     playerMonHealthBox.add([
@@ -66,12 +66,12 @@ function setBattle(worldState) {
         pos(15, 50)
     ])
 
-    tween(playerMonHealthBox.pos.x, 100, 0.3, (val) => playerMonHealthBox.pos.x = val, easings.easeInSine)
+    tween(playerMonHealthBox.pos.x, 200, 0.3, (val) => playerMonHealthBox.pos.x = val, easings.easeInSine)
 
     const enemyMonHealthBox = add([
         rect(400, 100),
         outline(4),
-        pos(1000, 500) 
+        pos(1500, 650) 
     ])
 
     enemyMonHealthBox.add([
@@ -92,12 +92,12 @@ function setBattle(worldState) {
         pos(15, 50)
     ])
 
-    tween(enemyMonHealthBox.pos.x, 850, 0.3, (val) => enemyMonHealthBox.pos.x = val, easings.easeInSine)
+    tween(enemyMonHealthBox.pos.x, 1200, 0.3, (val) => enemyMonHealthBox.pos.x = val, easings.easeInSine)
 
     const box = add([
-        rect(1300, 300),
+        rect(1000, 200),
         outline(4),
-        pos(50, 620)
+        pos(20, 740)
     ])
 
     const content = box.add([
@@ -143,7 +143,7 @@ function setBattle(worldState) {
 
         if (phase === 'enemy-turn') {
             content.text = worldState.enemyName.toUpperCase() + ' attacked you!!'
-            const damageDealt = Math.random() * 100
+            const damageDealt = Math.random() * 150
 
             if (damageDealt > 80) {
                 content.text = worldState.enemyName.toUpperCase() + " attacked you with a critical hit!"
@@ -157,9 +157,9 @@ function setBattle(worldState) {
         }
 
         if (phase === 'player-turn') {
-            const damageDealt = Math.random() * 250
+            const damageDealt = Math.random() * 300
 
-            if (damageDealt > 150) {
+            if (damageDealt > 250) {
                 content.text = "You attacked a critical hit!"
             } else {
                 content.text = 'PLAYER used attack.'
@@ -217,7 +217,12 @@ function setBattle(worldState) {
                 if(worldState.enemyName === "spider"){
                     window.open("https://www.youtube.com/", '_blank')
                 }
-
+                if(worldState.enemyName === "centipede"){
+                    window.open("https://www.youtube.com/", '_blank')
+                }
+                if(worldState.enemyName === "grass"){
+                    window.open("https://www.youtube.com/", '_blank')
+                }
             }, 6000)
         }
 

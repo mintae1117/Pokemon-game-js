@@ -84,8 +84,8 @@ function setWorld(worldState) {
             '0   3333333    0',
             '0    0         0',
             '0              0',
-            '0              0',
-            ' 00000000000000 ',
+            '0          00000',
+            ' 0000000000     ',
             '                '
         ], {
             tileWidth: 16,
@@ -234,7 +234,7 @@ function setWorld(worldState) {
             pos(350, 700),
             fixed()
         ])
-        const dialogue = "Defeat all monsters on this island and you'll become the champion! and..."
+        const dialogue = "Defeat all monsters on this island and you'll become the champion!"
         const content = dialogueBox.add([
             text('', 
             {
@@ -249,9 +249,6 @@ function setWorld(worldState) {
         
         if (worldState.faintedMons.length === 0) {
             content.text = dialogue
-            setTimeout(() => {
-                content.text = "go and look around freely!    [press space]"
-            }, 2000);
         }
         else if(worldState.faintedMons.length === 1){
             content.text = "You've got three more left to defeat!"
