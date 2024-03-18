@@ -215,13 +215,13 @@ function setBattle(worldState) {
                     window.open("https://www.naver.com/", '_blank')
                 }
                 if(worldState.enemyName === "spider"){
-                    window.open("https://www.youtube.com/", '_blank')
+                    window.open("https://moonhair.co.kr/", '_blank')
                 }
                 if(worldState.enemyName === "centipede"){
                     window.open("https://www.youtube.com/", '_blank')
                 }
                 if(worldState.enemyName === "grass"){
-                    window.open("https://www.youtube.com/", '_blank')
+                    window.open("https://jinjood.com/", '_blank')
                 }
             }, 6000)
         }
