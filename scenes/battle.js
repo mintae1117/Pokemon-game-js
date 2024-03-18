@@ -1,14 +1,14 @@
 function setBattle(worldState) {
     add([
         sprite('battle-background'),
-        scale(2.0),
+        scale(window.innerWidth / 800),
         pos(0,0)
     ])
 
     const enemyMon = add([
         sprite(worldState.enemyName + '-mon'),
-        scale(5),
-        pos(1000,400),
+        scale(6),
+        pos(window.innerWidth, window.innerHeight / 5),
         opacity(1), 
         {
             fainted: false
@@ -18,16 +18,16 @@ function setBattle(worldState) {
 
     tween(
         enemyMon.pos.x, 
-        1300, 
-        0.3, 
+        window.innerWidth * 0.7, 
+        0.3,
         (val) => enemyMon.pos.x = val,
         easings.easeInSine
     )
 
     const playerMon = add([
         sprite('player-mon'),
-        scale(8),
-        pos(100, 400),
+        scale(9),
+        pos(0, window.innerHeight / 3),
         opacity(1),
         {
             fainted: false
@@ -36,7 +36,7 @@ function setBattle(worldState) {
 
     tween(
         playerMon.pos.x, 
-        300, 
+        window.innerWidth * 0.2, 
         0.3, 
         (val) => playerMon.pos.x = val, 
         easings.easeInSine
@@ -45,7 +45,7 @@ function setBattle(worldState) {
     const playerMonHealthBox = add([
        rect(400, 100),
        outline(4),
-       pos(-100, 100)
+       pos(0, window.innerHeight / 9)
     ])
 
     playerMonHealthBox.add([
@@ -66,12 +66,12 @@ function setBattle(worldState) {
         pos(15, 50)
     ])
 
-    tween(playerMonHealthBox.pos.x, 200, 0.3, (val) => playerMonHealthBox.pos.x = val, easings.easeInSine)
+    tween(playerMonHealthBox.pos.x, (window.innerWidth * 0.2) - 60, 0.3, (val) => playerMonHealthBox.pos.x = val, easings.easeInSine)
 
     const enemyMonHealthBox = add([
         rect(400, 100),
         outline(4),
-        pos(1500, 650) 
+        pos(window.innerWidth, window.innerHeight * 0.5) 
     ])
 
     enemyMonHealthBox.add([
@@ -92,12 +92,12 @@ function setBattle(worldState) {
         pos(15, 50)
     ])
 
-    tween(enemyMonHealthBox.pos.x, 1200, 0.3, (val) => enemyMonHealthBox.pos.x = val, easings.easeInSine)
+    tween(enemyMonHealthBox.pos.x, (window.innerWidth * 0.7) - 80, 0.3, (val) => enemyMonHealthBox.pos.x = val, easings.easeInSine)
 
     const box = add([
-        rect(1000, 200),
+        rect(window.innerWidth - 50, window.innerHeight * 0.3),
         outline(4),
-        pos(20, 740)
+        pos(25, window.innerHeight * 0.7 - 25)
     ])
 
     const content = box.add([

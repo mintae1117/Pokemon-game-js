@@ -16,7 +16,7 @@ function loadAssets() {
             anims: { 'spider': 1, 'centipede': 2, 'grass': 3 }
         }
     })
-    loadSprite('battle-background', './assets/battlebg01.png')
+    loadSprite('battle-background', './assets/battlefield.jpg')
     loadSpriteAtlas('./assets/tiles.png', {
         'tile': { x: 0, y: 0, width: 128, height: 128, sliceX: 8, sliceY: 8,
             anims: {

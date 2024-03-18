@@ -229,9 +229,9 @@ function setWorld(worldState) {
         player.isInDialogue = true
         const dialogueBoxFixedContainer = add([fixed()])
         const dialogueBox = dialogueBoxFixedContainer.add([
-            rect(1000, 200),
+            rect(window.innerWidth - 50, window.innerHeight * 0.3),
             outline(5),
-            pos(350, 700),
+            pos(25, window.innerHeight * 0.7 - 25),
             fixed()
         ])
         const dialogue = "Defeat all monsters on this island and you'll become the champion!"
@@ -239,7 +239,7 @@ function setWorld(worldState) {
             text('', 
             {
                 size: 42,
-                width: 900,
+                width: 1000,
                 lineSpacing: 15,
             }),
             color(10,10,10),
