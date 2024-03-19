@@ -40,7 +40,8 @@ function loadAssets() {
                 'ground-l': 41,
                 'ground-m': 42,
                 'ground-r': 43,
-                'rock-water': 60
+                'rock-water': 60,
+                'ground-block': 23
             }
         }
     })

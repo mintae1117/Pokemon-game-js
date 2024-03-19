@@ -17,9 +17,9 @@ function setWorld(worldState) {
             ' 30030000024445  ',
             ' 300a8888897777  ',
             ' 30064444457777  ',
-            ' 30000000000000  ',
-            ' 30000000000000  ',
-            ' 30000000021111  ',
+            ' zzzzzzzzzzzzzz  ',
+            ' zzzzzzzzzzzzzz  ',
+            ' zzzzzz77771111  ',
             ' 1111111111      ',
             '      b          ',
             '     b      b    ',
@@ -42,7 +42,8 @@ function setWorld(worldState) {
                 'b': () => makeTile('rock-water'),
                 'c': () => makeTile('grass-tl'),
                 'd': () => makeTile('grass-tm'),
-                'e': () => makeTile('grass-tr')
+                'e': () => makeTile('grass-tr'),
+                'z': () => makeTile('ground-block')
             }
         }),
         addLevel([
