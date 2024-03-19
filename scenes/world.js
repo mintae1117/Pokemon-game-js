@@ -235,12 +235,12 @@ function setWorld(worldState) {
             pos(25, window.innerHeight * 0.7 - 25),
             fixed()
         ])
-        const dialogue = "Defeat all monsters on this island and you'll become the champion!"
+        const dialogue = "Defeat all monsters on this island and unlock all the portfolio pages of mintaekim!"
         const content = dialogueBox.add([
             text('', 
             {
                 size: 42,
-                width: 1000,
+                width: window.innerWidth - 100,
                 lineSpacing: 15,
             }),
             color(10,10,10),
