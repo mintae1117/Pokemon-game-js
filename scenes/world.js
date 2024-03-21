@@ -8,20 +8,20 @@ function setWorld(worldState) {
 
     const map = [
         addLevel([
-            '                 ',
-            ' cdddddddddddde  ',
-            ' 30000000000002  ',
-            ' 30000000000002  ',
-            ' 30000000000002  ',
-            ' 30030000008889  ',
-            ' 30030000024445  ',
-            ' 300a8888897777  ',
-            ' 30064444457777  ',
-            ' zzzzzzzzzzzzzz  ',
-            ' zzzzzzzzzzzzzz  ',
-            ' zzzzzz77771111  ',
-            ' 1111111111      ',
-            '      b          ',
+            '                               ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            ' 0000000000000000000000000000  ',
+            '      b                        ',
             '     b      b    ',
             ' b             b '
         ], {
@@ -43,7 +43,7 @@ function setWorld(worldState) {
                 'c': () => makeTile('grass-tl'),
                 'd': () => makeTile('grass-tm'),
                 'e': () => makeTile('grass-tr'),
-                'z': () => makeTile('ground-block')
+                'z': () => makeTile('ground-block'),
             }
         }),
         addLevel([
@@ -74,20 +74,20 @@ function setWorld(worldState) {
             }
         }),
         addLevel([
-            ' 00000000000000 ',
-            '0     11       0',
-            '0           11 0',
-            '0           11 0',
-            '0              0',
-            '0   2          0',
-            '0   2      3333 ',
-            '0   2      0   0',
-            '0   3333333    0',
-            '0    0         0',
-            '0              0',
-            '0          00000',
-            ' 0000000000     ',
-            '                '
+            '000000000000000000000000000000',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '0                            0',
+            '000000000000000000000000000000',
         ], {
             tileWidth: 16,
             tileHeight: 16,
@@ -127,6 +127,7 @@ function setWorld(worldState) {
         }
     }
 
+    
     add([sprite('mini-mons'), area(), body({isStatic: true}), pos(100,700), scale(4), 'cat'])
 
     const spiderMon = add([sprite('mini-mons'), area(), body({isStatic: true}), pos(400,300), scale(4), 'spider'])
@@ -287,8 +288,6 @@ function setWorld(worldState) {
             }, 1000)
         })
     }
-
-
 
     onCollideWithPlayer('cat', player, worldState)
     onCollideWithPlayer('spider', player, worldState)
