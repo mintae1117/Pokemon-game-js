@@ -143,7 +143,7 @@ function setBattle(worldState) {
 
         if (phase === 'enemy-turn') {
             content.text = worldState.enemyName.toUpperCase() + ' attacked you!!'
-            const damageDealt = Math.random() * 150
+            const damageDealt = Math.random() * 50
 
             if (damageDealt > 80) {
                 content.text = worldState.enemyName.toUpperCase() + " attacked you with a critical hit!"
@@ -212,16 +212,20 @@ function setBattle(worldState) {
                 go('world', worldState)
 
                 if(worldState.enemyName === "cat"){
-                    window.open("https://www.naver.com/", '_blank')
+                    //window.open("https://www.naver.com/", '_blank')
+                    alert("You defeated cat!");
                 }
                 if(worldState.enemyName === "spider"){
-                    window.open("https://moonhair.co.kr/", '_blank')
+                    //window.open("https://moonhair.co.kr/", '_blank')
+                    alert("You defeated spider!");
                 }
                 if(worldState.enemyName === "centipede"){
-                    window.open("https://www.youtube.com/", '_blank')
+                    //window.open("https://www.youtube.com/", '_blank')
+                    alert("You defeated centipede!");
                 }
                 if(worldState.enemyName === "grass"){
-                    window.open("https://jinjood.com/", '_blank')
+                    //window.open("https://jinjood.com/", '_blank')
+                    alert("You defeated grass!");
                 }
             }, 6000)
         }
