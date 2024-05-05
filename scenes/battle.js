@@ -205,7 +205,7 @@ function setBattle(worldState) {
                 content.text = 'Player won the battle!'
             }, 2000)
             setTimeout(() => {
-                content.text = 'going to the page'
+                content.text = 'Going back to the world.'
             }, 4000)
             setTimeout(() => {
                 worldState.faintedMons.push(worldState.enemyName)
@@ -235,7 +235,7 @@ function setBattle(worldState) {
             content.text = 'PLAYER fainted!'
             playerMon.fainted = true
             setTimeout(() => {
-                content.text = 'You rush to get PLAYER healed!'
+                content.text = 'PLAYER went back to get healed!'
             }, 2000)
             setTimeout(() => {
                 worldState.playerPos = vec2(500,700)
